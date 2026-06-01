@@ -172,6 +172,9 @@
       transition: border-color 0.2s;
     }
     .proj-card:hover { border-color: #333; }
+    .proj-card.azure-card-inprogress { background: #000; border: 0.5px solid #2a1500; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s; }
+    .proj-card.azure-card-inprogress:hover { border-color: #6a3500; }
+    .proj-num.orange-num { color: #4a2500; }
     .proj-card.azure-card {
       border-color: #1a2a3a;
       background: #080c10;
@@ -241,6 +244,7 @@
     .status.wip { background: #0a0f1a; color: #4da6ff; border: 0.5px solid #1a2a3a; }
     .status.soon { background: #111; color: #444; border: 0.5px solid #222; }
     .status.az104 { background: #080c10; color: #60a5fa; border: 0.5px solid #1a3a5a; }
+    .status.inprogress { background: #120a00; color: #f97316; border: 0.5px solid #4a2500; }
     /* SECTION HEADER WITH BADGE */
     .section-header {
       display: flex;
@@ -488,9 +492,9 @@
         </div>
       </div>
 
-      <div class="proj-card azure-card">
-        <div class="proj-num azure-num">AZ — 04</div>
-        <div class="proj-title">Entra ID Integration and Identity Management <span class="status az104">complete</span></div>
+      <div class="proj-card azure-card-inprogress">
+        <div class="proj-num orange-num">AZ — 04</div>
+        <div class="proj-title">Entra ID Integration and Identity Management <span class="status inprogress">in progress</span></div>
         <div class="proj-desc">Created users and security groups, registered an application with scoped Microsoft Graph permissions, assigned users to the app via Enterprise Applications, enforced MFA through Conditional Access policies, and audited sign-in activity logs.</div>
         <div class="proj-tags">
           <span class="proj-tag azure-tag">Entra ID</span>
@@ -505,9 +509,9 @@
         </div>
       </div>
 
-      <div class="proj-card azure-card">
-        <div class="proj-num azure-num">AZ — 05</div>
-        <div class="proj-title">Azure App Service Deployment and Scaling <span class="status az104">complete</span></div>
+      <div class="proj-card azure-card-inprogress">
+        <div class="proj-num orange-num">AZ — 05</div>
+        <div class="proj-title">Azure App Service Deployment and Scaling <span class="status inprogress">in progress</span></div>
         <div class="proj-desc">Deployed a web application via App Service with GitHub Actions CI/CD, set up a staging deployment slot for zero-downtime swaps, configured CPU-based autoscaling rules, automated backups to Azure Storage, and built an Azure Monitor alert dashboard.</div>
         <div class="proj-tags">
           <span class="proj-tag azure-tag">App Service</span>
@@ -525,87 +529,6 @@
     </div>
   </div>
 
-  <hr class="divider">
-
-  <!-- EXISTING LAB PROJECTS -->
-  <div class="section">
-    <div class="section-label">lab projects</div>
-    <div class="proj-grid">
-      <div class="proj-card">
-        <div class="proj-num">PROJECT 01</div>
-        <div class="proj-title">Azure Active Directory &amp; Entra ID Lab <span class="status live">live</span></div>
-        <div class="proj-desc">Deployed Windows Server 2022 in Azure, promoted to Domain Controller, built enterprise OU structure across IT, HR, Workstations, and Servers. Automated bulk user provisioning via PowerShell — 100 users across OUs with error handling and self-verification. Configured GPOs for password policy and security baselines.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Azure</span>
-          <span class="proj-tag">Windows Server 2022</span>
-          <span class="proj-tag">Active Directory</span>
-          <span class="proj-tag">PowerShell</span>
-          <span class="proj-tag">GPO</span>
-          <span class="proj-tag">Entra ID</span>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-num">PROJECT 02</div>
-        <div class="proj-title">Microsoft Intune MDM Lab <span class="status wip">in progress</span></div>
-        <div class="proj-desc">Configuring device enrollment, compliance policies, app deployment, and Autopilot using M365 Developer Tenant. Documenting the full endpoint management lifecycle from enrollment through policy enforcement.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Intune</span>
-          <span class="proj-tag">M365</span>
-          <span class="proj-tag">Autopilot</span>
-          <span class="proj-tag">Entra ID</span>
-          <span class="proj-tag">Defender</span>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-num">PROJECT 03</div>
-        <div class="proj-title">pfSense Firewall Lab <span class="status soon">coming soon</span></div>
-        <div class="proj-desc">VLAN segmentation, firewall rule configuration, and network security policy implementation. Building directly toward CCNA exam objectives and bridging real-world Palo Alto experience to open-source firewall administration.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">pfSense</span>
-          <span class="proj-tag">VLANs</span>
-          <span class="proj-tag">Firewall Rules</span>
-          <span class="proj-tag">Network Segmentation</span>
-          <span class="proj-tag">CCNA</span>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-num">PROJECT 04</div>
-        <div class="proj-title">Linux Basics Lab <span class="status soon">coming soon</span></div>
-        <div class="proj-desc">Ubuntu Server VM in Azure — SSH configuration, user and group management, file permissions, and basic bash scripting. Closing the Linux gap that appears consistently on infrastructure and sysadmin job postings.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Ubuntu Server</span>
-          <span class="proj-tag">SSH</span>
-          <span class="proj-tag">User Management</span>
-          <span class="proj-tag">Bash</span>
-          <span class="proj-tag">File Permissions</span>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-num">PROJECT 05</div>
-        <div class="proj-title">PowerShell Automation Lab <span class="status wip">in progress</span></div>
-        <div class="proj-desc">Built bulk AD user provisioning script creating 100 users across IT and HR OUs with conditional OU targeting, try/catch error handling, and self-verification. Expanding to CSV-driven onboarding automation and scheduled task management.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">PowerShell</span>
-          <span class="proj-tag">Active Directory</span>
-          <span class="proj-tag">Automation</span>
-          <span class="proj-tag">Error Handling</span>
-          <span class="proj-tag">CSV Processing</span>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-num">PROJECT 06</div>
-        <div class="proj-title">AI Integration &amp; Governance Lab <span class="status soon">coming soon</span></div>
-        <div class="proj-desc">Enterprise AI governance patterns built on real-world experience administering Google Gemini access controls for 3,000+ users. Documenting security group frameworks, access control policies, and practical AI workflow integration using Claude API.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Claude API</span>
-          <span class="proj-tag">AI Governance</span>
-          <span class="proj-tag">Google Gemini</span>
-          <span class="proj-tag">Security Groups</span>
-          <span class="proj-tag">PowerShell</span>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- SKILLS -->
